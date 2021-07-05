@@ -1,15 +1,16 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import TabsScreen from './TabsScreen';
-import Profile from './Profile';
 
+import Profile from './Profile';
+import DrawerContent from './DrawerContent';
+import CoursesStack from '../navigators/CoursesStack';
 const Drawer = createDrawerNavigator();
 
 const DrawerScreen = () => {
   return (
     <>
-      <Drawer.Navigator initialRouteName="Profile">
-        <Drawer.Screen name="Home" component={TabsScreen} />
+      <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+        <Drawer.Screen name="Home" component={CoursesStack} />
         <Drawer.Screen name="Profile" component={Profile} />
       </Drawer.Navigator>
     </>

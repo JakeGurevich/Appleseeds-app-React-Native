@@ -1,6 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStackScreen from './src/screens/RootStackScreen';
+import {AuthContext} from './src/context';
+import Splash from './src/screens/Splash';
 import {
   SafeAreaView,
   ScrollView,
@@ -38,16 +40,16 @@ const App = () => {
     }, 1000);
   }, []);
 
-  // if (isLoading) {
-  //   return <Splash />;
-  // }
+  if (isLoading) {
+    return <Splash />;
+  }
 
   return (
-    // <AuthContext.Provider value={authContext}>
-    <NavigationContainer>
-      <RootStackScreen userToken={userToken} />
-    </NavigationContainer>
-    // </AuthContext.Provider>
+    <AuthContext.Provider value={authContext}>
+      <NavigationContainer>
+        <RootStackScreen userToken={userToken} />
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 };
 

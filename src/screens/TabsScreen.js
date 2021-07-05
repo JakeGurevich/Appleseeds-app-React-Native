@@ -7,9 +7,18 @@ const Tab = createMaterialTopTabNavigator();
 const TabsScreen = () => {
   return (
     <>
-      <Tab.Navigator>
-        <Tab.Screen name="Student" component={StudentScreen} />
-        <Tab.Screen name="Madrih" component={MadrihScreen} />
+      <Tab.Navigator
+        tabBarOptions={{
+          labelStyle: {fontSize: 18},
+          activeTintColor: '#e91e63',
+          style: {backgroundColor: 'powderblue'},
+        }}>
+        <Tab.Screen
+          name="משתתף"
+          component={StudentScreen}
+          
+        />
+        <Tab.Screen name="מדריך" component={MadrihScreen} />
       </Tab.Navigator>
     </>
   );
