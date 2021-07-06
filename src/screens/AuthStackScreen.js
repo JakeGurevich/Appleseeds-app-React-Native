@@ -14,7 +14,7 @@ const AuthStackScreen = () => {
           options={{title: 'Sign In'}}
         />
         <AuthStack.Screen
-          name="CreateAccount"
+          name="Sign up"
           component={CreateAccount}
           options={{title: 'Create Account'}}
         />

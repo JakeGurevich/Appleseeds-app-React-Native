@@ -13,8 +13,8 @@ const CoursesStack = ({navigation}) => {
         name="Tabs"
         children={TabsScreen}
         options={{
-          headerTitle: 'Courses',
-          headerLeft: () => (
+          headerTitle: 'קורסים',
+          headerRight: () => (
             <Button
               icon="menu"
               onPress={() => navigation.toggleDrawer()}></Button>

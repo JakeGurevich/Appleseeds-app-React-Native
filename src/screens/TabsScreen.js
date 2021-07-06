@@ -10,15 +10,12 @@ const TabsScreen = () => {
       <Tab.Navigator
         tabBarOptions={{
           labelStyle: {fontSize: 18},
-          activeTintColor: '#e91e63',
-          style: {backgroundColor: 'powderblue'},
+          activeTintColor: 'white',
+          inactiveTintColor: 'black',
+          style: {backgroundColor: '#1E90FF'},
         }}>
-        <Tab.Screen
-          name="משתתף"
-          component={StudentScreen}
-          
-        />
         <Tab.Screen name="מדריך" component={MadrihScreen} />
+        <Tab.Screen name="משתתף/ת" component={StudentScreen} />
       </Tab.Navigator>
     </>
   );
