@@ -14,8 +14,8 @@ const TabsScreen = () => {
           inactiveTintColor: 'black',
           style: {backgroundColor: '#1E90FF'},
         }}>
-        <Tab.Screen name="מדריך" component={MadrihScreen} />
         <Tab.Screen name="משתתף/ת" component={StudentScreen} />
+        <Tab.Screen name="מדריך" component={MadrihScreen} />
       </Tab.Navigator>
     </>
   );

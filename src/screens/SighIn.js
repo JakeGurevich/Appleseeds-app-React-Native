@@ -288,20 +288,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     backgroundColor: '#1E90FF',
   },
-  header: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    paddingHorizontal: 20,
-    paddingBottom: 50,
-  },
-  footer: {
-    flex: 3,
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    paddingHorizontal: 20,
-    paddingVertical: 30,
-  },
+
   text_header: {
     color: '#fff',
     fontWeight: 'bold',

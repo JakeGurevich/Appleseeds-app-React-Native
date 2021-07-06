@@ -1,7 +1,7 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import Profile from './Profile';
+import ProfileStack from '../navigators/PrifileStack';
 import DrawerContent from './DrawerContent';
 import CoursesStack from '../navigators/CoursesStack';
 const Drawer = createDrawerNavigator();
@@ -13,7 +13,7 @@ const DrawerScreen = () => {
         drawerContent={props => <DrawerContent {...props} />}
         drawerPosition="right">
         <Drawer.Screen name="Home" component={CoursesStack} />
-        <Drawer.Screen name="Profile" component={Profile} />
+        <Drawer.Screen name="Profile" component={ProfileStack} />
       </Drawer.Navigator>
     </>
   );

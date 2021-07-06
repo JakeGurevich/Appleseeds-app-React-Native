@@ -24,7 +24,7 @@ const ModalView = ({check, showModal}) => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Enter code :</Text>
+            <Text style={styles.modalText}>נא להזין את הקוד ההרשמה שקיבלת</Text>
             <TextInput
               value={code}
               onChangeText={text => setCode(text)}
