@@ -17,6 +17,7 @@ const CoursesStack = ({navigation}) => {
           headerRight: () => (
             <Button
               icon="menu"
+              size={30}
               onPress={() => navigation.toggleDrawer()}></Button>
           ),
         }}

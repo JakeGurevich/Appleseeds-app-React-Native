@@ -17,12 +17,13 @@ import {AuthContext} from '../context';
 const DrawerContent = props => {
   const {signOut} = React.useContext(AuthContext);
   return (
-    <View style={{flex: 1}}>
-      <DrawerContentScrollView {...props}>
-        <View style={styles.drawerContent}>
-          <View style={styles.bg}>
-            <Text style={styles.infoTitle}>Welcome to Appleseeds</Text>
-          </View>
+    <>
+      {/* // <View style={{flex: 1}}> */}
+      <View style={styles.drawerContent}>
+        <View style={styles.bg}>
+          <Text style={styles.infoTitle}>Welcome to Appleseeds</Text>
+        </View>
+        <DrawerContentScrollView {...props}>
           <View style={{flex: 1}}>
             <View style={styles.userInfoSection}>
               <View style={{flexDirection: 'row', marginLeft: 10}}>
@@ -34,7 +35,7 @@ const DrawerContent = props => {
                 />
                 <View style={{flexDirection: 'column', marginLeft: 15}}>
                   <Title style={styles.title}>Bill Jonson</Title>
-                  <Caption style={styles.caption}>@bill</Caption>
+                  {/* <Caption style={styles.caption}>@bill</Caption> */}
                 </View>
               </View>
             </View>
@@ -60,19 +61,27 @@ const DrawerContent = props => {
                 <Icon name="cog-outline" color={color} size={size} />
               )}
             />
+            <DrawerItem
+              label="סטודנטים"
+              icon={({color, size}) => (
+                <Icon name="bookshelf" color={color} size={size} />
+              )}
+              onPress={() => props.navigation.navigate('Students')}
+            />
           </Drawer.Section>
-        </View>
-      </DrawerContentScrollView>
-      <Drawer.Section style={styles.bottomDrawerSection}>
-        <DrawerItem
-          label="התנתקות"
-          icon={({color, size}) => (
-            <Icon name="exit-to-app" color={color} size={size} />
-          )}
-          onPress={() => signOut()}
-        />
-      </Drawer.Section>
-    </View>
+        </DrawerContentScrollView>
+        <Drawer.Section style={styles.bottomDrawerSection}>
+          <DrawerItem
+            label="התנתקות"
+            icon={({color, size}) => (
+              <Icon name="exit-to-app" color={color} size={size} />
+            )}
+            onPress={() => signOut()}
+          />
+        </Drawer.Section>
+      </View>
+      {/* // </View> */}
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -88,6 +97,9 @@ const styles = StyleSheet.create({
   bg: {
     color: 'white',
     backgroundColor: '#1E90FF',
+    height: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoTitle: {
     fontSize: 16,

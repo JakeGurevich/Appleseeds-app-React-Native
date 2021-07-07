@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import RootStackScreen from './src/screens/RootStackScreen';
 import {AuthContext} from './src/context';
 import Splash from './src/screens/Splash';
+import StudentsListScreen from './src/screens/StudentsListScreen';
 import {
   SafeAreaView,
   ScrollView,
