@@ -40,7 +40,7 @@ const signIn = dispatch => {
     const res = await api.post('/datagate.php?type=login', {
       email,
       pass,
-      v: 2.4,
+     
     });
     console.log(res.data.token);
     console.log(typeof res.data);

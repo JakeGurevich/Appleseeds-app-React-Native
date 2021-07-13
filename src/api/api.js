@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://dc.appleseeds.org.il/server',
+  baseURL: 'http://54.93.207.96/server',
   transformResponse: [],
 
   //   transformResponse: [

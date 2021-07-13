@@ -24,8 +24,8 @@ import Users from '../model/users';
 const SignInScreen = ({navigation}) => {
   const [showModal, setShowModal] = React.useState(false);
   const [data, setData] = React.useState({
-    email: 'umanrh@gmail.com',
-    password: 'Moibootcamp770',
+    email: 'admin@email.com',
+    password: '1234',
     check_textInputChange: false,
     secureTextEntry: true,
     isValidUser: true,
