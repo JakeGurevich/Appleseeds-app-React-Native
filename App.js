@@ -1,56 +1,26 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStackScreen from './src/screens/RootStackScreen';
-import {AuthContext} from './src/context';
+
 import Splash from './src/screens/Splash';
-import StudentsListScreen from './src/screens/StudentsListScreen';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+
+import {Provider} from './src/context/AuthContext';
+import {} from 'react-native';
 
 const App = () => {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState('hh');
+  // const [isLoading, setIsLoading] = React.useState(true);
+  // const [userToken, setUserToken] = React.useState('hh');
 
-  const authContext = React.useMemo(() => {
-    return {
-      signIn: () => {
-        setIsLoading(false);
-        setUserToken('asdf');
-      },
-      signUp: () => {
-        setIsLoading(false);
-        setUserToken('asdf');
-      },
-      signOut: () => {
-        setIsLoading(false);
-        setUserToken(null);
-      },
-    };
-  }, []);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
-  if (isLoading) {
-    return <Splash />;
-  }
+  // if (loginState.isLoading) {
+  //   return <Splash />;
+  // }
 
   return (
-    <AuthContext.Provider value={authContext}>
+    <Provider>
       <NavigationContainer>
-        <RootStackScreen userToken={userToken} />
+        <RootStackScreen />
       </NavigationContainer>
-    </AuthContext.Provider>
+    </Provider>
   );
 };
 

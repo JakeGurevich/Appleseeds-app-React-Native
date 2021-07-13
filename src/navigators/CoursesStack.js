@@ -11,18 +11,43 @@ const CoursesStack = ({navigation}) => {
     <Courses.Navigator>
       <Courses.Screen
         name="Tabs"
-        children={TabsScreen}
+        component={TabsScreen}
         options={{
           headerTitle: 'קורסים',
+
           headerRight: () => (
             <Button
               icon="menu"
+              color="white"
               size={30}
               onPress={() => navigation.toggleDrawer()}></Button>
           ),
+          headerStyle: {
+            backgroundColor: '#1E90FF',
+            borderBottomColor: '1E90FF',
+            borderBottomWidth: 0,
+          },
+          headerTintColor: '#fff',
         }}
       />
-      <Courses.Screen name="Courses" component={CoursesScreen} />
+      <Courses.Screen
+        name="Courses"
+        component={CoursesScreen}
+        options={{
+          headerLeft: null,
+          headerTitleAlign: 'center',
+          headerRight: () => (
+            <Button
+              icon="arrow-right"
+              size={50}
+              onPress={() => navigation.goBack()}></Button>
+          ),
+          headerStyle: {
+            backgroundColor: '#1E90FF',
+          },
+          headerTintColor: '#fff',
+        }}
+      />
     </Courses.Navigator>
   );
 };

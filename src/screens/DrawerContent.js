@@ -12,7 +12,7 @@ import {
   Switch,
 } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {AuthContext} from '../context';
+import {Context as AuthContext} from '../context/AuthContext';
 
 const DrawerContent = props => {
   const {signOut} = React.useContext(AuthContext);
@@ -26,17 +26,18 @@ const DrawerContent = props => {
         <DrawerContentScrollView {...props}>
           <View style={{flex: 1}}>
             <View style={styles.userInfoSection}>
-              <View style={{flexDirection: 'row', marginLeft: 10}}>
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                <View style={{flexDirection: 'column', marginLeft: 15}}>
+                  <Title style={styles.title}>יעקב גורביץ'</Title>
+                  {/* <Caption style={styles.caption}>@bill</Caption> */}
+                </View>
                 <Avatar.Image
                   source={{
                     uri: 'https://storage.googleapis.com/stateless-campfire-pictures/2019/04/6f56fc81-dummyuserimage-1556273962c8p4l.jpg',
                   }}
-                  size={50}
+                  size={40}
                 />
-                <View style={{flexDirection: 'column', marginLeft: 15}}>
-                  <Title style={styles.title}>Bill Jonson</Title>
-                  {/* <Caption style={styles.caption}>@bill</Caption> */}
-                </View>
               </View>
             </View>
           </View>
@@ -89,8 +90,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   userInfoSection: {
-    paddingTop: 10,
-    paddingLeft: 20,
+    paddingVertical: 10,
+    // paddingLeft: 20,
     borderBottomColor: 'grey',
     borderBottomWidth: 1,
   },

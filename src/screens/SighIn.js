@@ -17,15 +17,15 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import ModalView from '../components/ModalView';
 // import {useTheme} from 'react-native-paper';
 
-import {AuthContext} from '../context';
+import {Context as AuthContext} from '../context/AuthContext';
 
 import Users from '../model/users';
 
 const SignInScreen = ({navigation}) => {
   const [showModal, setShowModal] = React.useState(false);
   const [data, setData] = React.useState({
-    username: '',
-    password: '',
+    email: 'umanrh@gmail.com',
+    password: 'Moibootcamp770',
     check_textInputChange: false,
     secureTextEntry: true,
     isValidUser: true,
@@ -40,14 +40,14 @@ const SignInScreen = ({navigation}) => {
     if (val.trim().length >= 4) {
       setData({
         ...data,
-        username: val,
+        email: val,
         check_textInputChange: true,
         isValidUser: true,
       });
     } else {
       setData({
         ...data,
-        username: val,
+        email: val,
         check_textInputChange: false,
         isValidUser: false,
       });
@@ -55,7 +55,7 @@ const SignInScreen = ({navigation}) => {
   };
 
   const handlePasswordChange = val => {
-    if (val.trim().length >= 8) {
+    if (val.trim().length >= 3) {
       setData({
         ...data,
         password: val,
@@ -99,27 +99,26 @@ const SignInScreen = ({navigation}) => {
       navigation.navigate('Sign up');
     }
   };
-  const loginHandle = (userName, password) => {
-    const foundUser = Users.filter(item => {
-      return userName == item.username && password == item.password;
-    });
+  const loginHandle = (email, password) => {
+    // const foundUser = Users.filter(item => {
+    //   return userName == item.username && password == item.password;
+    // });
 
-    if (data.username.length == 0 || data.password.length == 0) {
-      Alert.alert(
-        'Wrong Input!',
-        'Username or password field cannot be empty.',
-        [{text: 'Okay'}],
-      );
-      return;
-    }
-
-    if (foundUser.length == 0) {
-      Alert.alert('Invalid User!', 'Username or password is incorrect.', [
+    if (email.length == 0 || password.length == 0) {
+      Alert.alert('Wrong Input!', 'Email or password field cannot be empty.', [
         {text: 'Okay'},
       ]);
       return;
     }
-    signIn(foundUser);
+
+    // if (foundUser.length == 0) {
+    //   Alert.alert('Invalid User!', 'Username or password is incorrect.', [
+    //     {text: 'Okay'},
+    //   ]);
+    //   return;
+    // }
+    console.log(email, password);
+    signIn(email, password);
   };
 
   return (
@@ -160,6 +159,7 @@ const SignInScreen = ({navigation}) => {
               // color: colors.text
             },
           ]}
+          value={data.email}
           autoCapitalize="none"
           onChangeText={val => textInputChange(val)}
           onEndEditing={e => handleValidUser(e.nativeEvent.text)}
@@ -204,6 +204,7 @@ const SignInScreen = ({navigation}) => {
               textAlign: 'right',
             },
           ]}
+          value={data.password}
           autoCapitalize="none"
           onChangeText={val => handlePasswordChange(val)}
         />
@@ -238,7 +239,7 @@ const SignInScreen = ({navigation}) => {
             },
           ]}
           onPress={() => {
-            loginHandle(data.username, data.password);
+            loginHandle(data.email, data.password);
           }}>
           <Text
             style={[

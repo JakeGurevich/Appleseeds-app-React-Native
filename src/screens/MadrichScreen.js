@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {List} from 'react-native-paper';
 
-const MadrihScreen = () => {
+const MadrichScreen = ({navigation}) => {
   const [expanded, setExpanded] = useState(true);
 
   const handlePress = () => setExpanded(!expanded);
@@ -13,8 +13,12 @@ const MadrihScreen = () => {
         left={props => <List.Icon {...props} icon="folder" />}
         expanded={expanded}
         onPress={handlePress}>
-        <List.Item title="Test" />
-        <List.Item title="NETA test" />
+        {/* <List.Item title="Test" /> */}
+
+        <List.Item
+          title="NETA test"
+          onPress={() => navigation.navigate('Courses',{title:"NETA test"})}
+        />
       </List.Accordion>
       <List.Accordion
         title="קורסים לא פעילים"
@@ -26,4 +30,4 @@ const MadrihScreen = () => {
   );
 };
 
-export default MadrihScreen;
+export default MadrichScreen;

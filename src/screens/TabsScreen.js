@@ -1,7 +1,7 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import StudentScreen from './StudentScreen';
-import MadrihScreen from './MadrihScreen';
+import MadrichStack from '../navigators/MadrichStack';
 
 const Tab = createMaterialTopTabNavigator();
 const TabsScreen = () => {
@@ -9,13 +9,17 @@ const TabsScreen = () => {
     <>
       <Tab.Navigator
         tabBarOptions={{
-          labelStyle: {fontSize: 18},
+          labelStyle: {fontSize: 20},
           activeTintColor: 'white',
           inactiveTintColor: 'black',
-          style: {backgroundColor: '#1E90FF'},
+          style: {backgroundColor: '#1E90FF', borderTopWidth: 0},
+          indicatorStyle: {
+            borderBottomColor: '#fff',
+            borderBottomWidth: 4,
+          },
         }}>
         <Tab.Screen name="משתתף/ת" component={StudentScreen} />
-        <Tab.Screen name="מדריך" component={MadrihScreen} />
+        <Tab.Screen name="מדריך" component={MadrichStack} />
       </Tab.Navigator>
     </>
   );
