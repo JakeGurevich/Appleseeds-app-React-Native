@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import {HeaderBackButton} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -8,6 +14,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const CoursesScreen = ({route, navigation}) => {
   const {title} = route.params;
   React.useLayoutEffect(() => {
+    console.log(navigation, route);
     navigation.setOptions({
       title,
     });
@@ -15,10 +22,13 @@ const CoursesScreen = ({route, navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView indicatorStyle="#61B1FF">
-        <View style={styles.section}>
-          <Text style={styles.text}>תכנון מפגש הקרוב</Text>
-          <Icon name="book-plus" size={30} color={'#61B1FF'} />
-        </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SingleCourse', {title: 'תכנון'})}>
+          <View style={styles.section}>
+            <Text style={styles.text}>תכנון מפגש הקרוב</Text>
+            <Icon name="book-plus" size={30} color={'#61B1FF'} />
+          </View>
+        </TouchableOpacity>
         <View style={styles.section}>
           <Text style={styles.text}>מפגשים אישיים</Text>
           <Icon name="account-multiple" size={30} color={'#61B1FF'} />

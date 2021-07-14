@@ -3,6 +3,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import TabsScreen from '../screens/TabsScreen';
 import CoursesScreen from '../screens/CoursesScreen';
+import SingleCourseScreen from '../screens/SingleCourseScreen';
 import {Button} from 'react-native-paper';
 const Courses = createStackNavigator();
 
@@ -33,6 +34,24 @@ const CoursesStack = ({navigation}) => {
       <Courses.Screen
         name="Courses"
         component={CoursesScreen}
+        options={{
+          headerLeft: null,
+          headerTitleAlign: 'center',
+          headerRight: () => (
+            <Button
+              icon="arrow-right"
+              size={50}
+              onPress={() => navigation.goBack()}></Button>
+          ),
+          headerStyle: {
+            backgroundColor: '#1E90FF',
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+      <Courses.Screen
+        name="SingleCourse"
+        component={SingleCourseScreen}
         options={{
           headerLeft: null,
           headerTitleAlign: 'center',
