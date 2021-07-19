@@ -1,10 +1,10 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import StudentScreen from './StudentScreen';
-import MadrichStack from '../navigators/MadrichStack';
+import StudentScreen from '../screens/StudentScreen';
+import MadrichStack from './MadrichStack';
 
 const Tab = createMaterialTopTabNavigator();
-const TabsScreen = () => {
+const TabsNavigator = () => {
   return (
     <>
       <Tab.Navigator
@@ -25,4 +25,4 @@ const TabsScreen = () => {
   );
 };
 
-export default TabsScreen;
+export default TabsNavigator;

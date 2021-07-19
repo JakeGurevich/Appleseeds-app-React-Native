@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
-import TabsScreen from '../screens/TabsScreen';
+import TabsNavigator from './TabsNavigator';
 import CoursesScreen from '../screens/CoursesScreen';
 import SingleCourseScreen from '../screens/SingleCourseScreen';
 import {Button} from 'react-native-paper';
@@ -12,7 +12,7 @@ const CoursesStack = ({navigation}) => {
     <Courses.Navigator>
       <Courses.Screen
         name="Tabs"
-        component={TabsScreen}
+        component={TabsNavigator}
         options={{
           headerTitle: 'קורסים',
 

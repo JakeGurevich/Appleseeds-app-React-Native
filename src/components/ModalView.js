@@ -8,6 +8,7 @@ import {
   Pressable,
   View,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ModalView = ({check, showModal}) => {
   const [modalVisible, setModalVisible] = useState(true);

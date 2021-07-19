@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import ProfileScreen from '../screens/ProfileScreen';
 const Profile = createStackNavigator();
 
-const PrifileStack = ({navigation}) => {
+const ProfileStack = ({navigation}) => {
   return (
     <Profile.Navigator>
       <Profile.Screen
@@ -24,4 +24,4 @@ const PrifileStack = ({navigation}) => {
   );
 };
 
-export default PrifileStack;
+export default ProfileStack;

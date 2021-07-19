@@ -19,9 +19,9 @@ import ModalView from '../components/ModalView';
 
 import {Context as AuthContext} from '../context/AuthContext';
 
-import Users from '../model/users';
+// import Users from '../model/users';
 
-const SignInScreen = ({navigation}) => {
+const SignIn = ({navigation}) => {
   const [showModal, setShowModal] = React.useState(false);
   const [data, setData] = React.useState({
     email: 'admin@email.com',
@@ -280,8 +280,6 @@ const SignInScreen = ({navigation}) => {
   );
 };
 
-export default SignInScreen;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -341,3 +339,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+export default SignIn;

@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import RootStackScreen from './src/screens/RootStackScreen';
+import RootStack from './src/navigators/RootStack';
 
 import Splash from './src/screens/Splash';
 
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Provider>
       <NavigationContainer>
-        <RootStackScreen />
+        <RootStack />
       </NavigationContainer>
     </Provider>
   );

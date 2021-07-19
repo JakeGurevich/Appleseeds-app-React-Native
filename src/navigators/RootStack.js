@@ -1,36 +1,36 @@
 import React, {useContext} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import AuthStackScreen from './AuthStackScreen';
-import DrawerScreen from './DrawerScreen';
+import AuthStack from './AuthStack';
+import DrawerNavigator from './DrawerNavigator';
 import {Context as AuthContext} from '../context/AuthContext';
-const RootStack = createStackNavigator();
+const Root = createStackNavigator();
 
-const RootStackScreen = () => {
+const RootStack = () => {
   const {state} = useContext(AuthContext);
   console.log(state);
   return (
     <>
-      <RootStack.Navigator headerMode="none">
+      <Root.Navigator headerMode="none">
         {state?.userToken ? (
-          <RootStack.Screen
+          <Root.Screen
             name="App"
-            component={DrawerScreen}
+            component={DrawerNavigator}
             options={{
               animationEnabled: false,
             }}
           />
         ) : (
-          <RootStack.Screen
+          <Root.Screen
             name="Auth"
-            component={AuthStackScreen}
+            component={AuthStack}
             options={{
               animationEnabled: false,
             }}
           />
         )}
-      </RootStack.Navigator>
+      </Root.Navigator>
     </>
   );
 };
 
-export default RootStackScreen;
+export default RootStack;

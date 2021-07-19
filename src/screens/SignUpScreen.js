@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, Button} from 'react-native';
-const CreateAccount = ({navigation}) => {
+
+const SignUpScreen = ({navigation}) => {
   return (
     <View>
       <Text>Create Account</Text>
@@ -15,4 +16,4 @@ const CreateAccount = ({navigation}) => {
   );
 };
 
-export default CreateAccount;
+export default SignUpScreen;
