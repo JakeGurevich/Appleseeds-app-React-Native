@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import {Button, View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import moment from 'moment';
+import 'moment/locale/he';
+moment.locale('he');
 
 const DateTimePicker = props => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -16,11 +19,11 @@ const DateTimePicker = props => {
 
   const handleConfirm = date => {
     if (props.type === 'date') {
-      const date = console.log('A date has been picked: ', date);
-      props.setDate(date);
+      console.log('A date has been picked: ', moment(date).format('ll'));
+      props.setDate(moment(date).format('ll'));
     } else {
-      console.log('A time has been picked: ', date);
-      props.setTime(date);
+      console.log('A time has been picked: ', moment(date).format('LT'));
+      props.setTime(moment(date).format('LT'));
     }
     hideDatePicker();
   };
@@ -43,7 +46,7 @@ const DateTimePicker = props => {
               ? props.date
               : props.type === 'time' && props.time
               ? props.time
-              : props.type === 'time'
+              : props.type === 'date'
               ? 'Enter date'
               : 'Enter time'}
           </Text>

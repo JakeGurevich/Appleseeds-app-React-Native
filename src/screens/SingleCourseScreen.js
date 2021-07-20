@@ -20,11 +20,6 @@ const SingleCourseScreen = ({route, navigation}) => {
         <DateTimePicker type="date" setDate={setDate} date={date} />
         <DateTimePicker type="time" setTime={setTime} time={time} />
       </View>
-      <View>
-        <Text>{time && console.log(time.getHours(), time.getMinutes())}</Text>
-        <Text>{date && console.log(date.getDate())}</Text>
-        <DateTimePickerModal />
-      </View>
     </View>
   );
 };
