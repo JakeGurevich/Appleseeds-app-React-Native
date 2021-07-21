@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from 'react-native-paper';
 import {createStackNavigator} from '@react-navigation/stack';
-import CoursesScreen from '../screens/CoursesScreen';
+import CoursesScreen from '../screens/CourseScreen';
 import MadrichScreen from '../screens/MadrichScreen';
 const Madrich = createStackNavigator();
 

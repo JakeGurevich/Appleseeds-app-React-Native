@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // ...
 
-const CoursesScreen = ({route, navigation}) => {
+const CourseScreen = ({route, navigation}) => {
   const {title} = route.params;
   React.useLayoutEffect(() => {
     console.log(navigation, route);
@@ -23,7 +23,9 @@ const CoursesScreen = ({route, navigation}) => {
     <View style={styles.container}>
       <ScrollView indicatorStyle="#61B1FF">
         <TouchableOpacity
-          onPress={() => navigation.navigate('SingleCourse', {title: 'תכנון'})}>
+          onPress={() =>
+            navigation.navigate('Mifgash', {title: ' תכנון מפגש'})
+          }>
           <View style={styles.section}>
             <Text style={styles.text}>תכנון מפגש הקרוב</Text>
             <Icon name="book-plus" size={30} color={'#61B1FF'} />
@@ -85,4 +87,4 @@ const styles = StyleSheet.create({
   },
   text: {fontSize: 20, marginRight: 15, color: '#61B1FF'},
 });
-export default CoursesScreen;
+export default CourseScreen;

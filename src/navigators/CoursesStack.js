@@ -1,9 +1,9 @@
 import React from 'react';
-
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
 import TabsNavigator from './TabsNavigator';
-import CoursesScreen from '../screens/CoursesScreen';
-import SingleCourseScreen from '../screens/SingleCourseScreen';
+import CourseScreen from '../screens/CourseScreen';
+import MifgashScreen from '../screens/MifgashScreen';
 import {Button} from 'react-native-paper';
 const Courses = createStackNavigator();
 
@@ -17,11 +17,12 @@ const CoursesStack = ({navigation}) => {
           headerTitle: 'קורסים',
 
           headerRight: () => (
-            <Button
-              icon="menu"
+            <Icon.Button
+              name="menu"
               color="white"
+              backgroundColor="#1E90FF"
               size={30}
-              onPress={() => navigation.toggleDrawer()}></Button>
+              onPress={() => navigation.toggleDrawer()}></Icon.Button>
           ),
           headerStyle: {
             backgroundColor: '#1E90FF',
@@ -32,16 +33,18 @@ const CoursesStack = ({navigation}) => {
         }}
       />
       <Courses.Screen
-        name="Courses"
-        component={CoursesScreen}
+        name="Course"
+        component={CourseScreen}
         options={{
           headerLeft: null,
           headerTitleAlign: 'center',
           headerRight: () => (
-            <Button
-              icon="arrow-right"
-              size={50}
-              onPress={() => navigation.goBack()}></Button>
+            <Icon.Button
+              name="arrow-right"
+              color="white"
+              backgroundColor="#1E90FF"
+              size={30}
+              onPress={() => navigation.goBack()}></Icon.Button>
           ),
           headerStyle: {
             backgroundColor: '#1E90FF',
@@ -50,16 +53,18 @@ const CoursesStack = ({navigation}) => {
         }}
       />
       <Courses.Screen
-        name="SingleCourse"
-        component={SingleCourseScreen}
+        name="Mifgash"
+        component={MifgashScreen}
         options={{
           headerLeft: null,
           headerTitleAlign: 'center',
           headerRight: () => (
-            <Button
-              icon="arrow-right"
-              size={50}
-              onPress={() => navigation.goBack()}></Button>
+            <Icon.Button
+              name="arrow-right"
+              color="white"
+              backgroundColor="#1E90FF"
+              size={30}
+              onPress={() => navigation.goBack()}></Icon.Button>
           ),
           headerStyle: {
             backgroundColor: '#1E90FF',

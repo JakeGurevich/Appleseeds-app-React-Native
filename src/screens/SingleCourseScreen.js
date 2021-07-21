@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import DateTimePicker from '../components/DateTimePicker';
-import DateTimePickerModal from '../components/DateTimePickerNew';
 
 const SingleCourseScreen = ({route, navigation}) => {
   const [date, setDate] = useState('');
