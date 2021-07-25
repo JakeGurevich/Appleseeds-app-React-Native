@@ -1,0 +1,163 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=22720, tid=0x00000000000063b0
+#
+# JRE version:  (8.0_292-b10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.292-b10 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002d32800):  JavaThread "Unknown thread" [_thread_in_vm, id=25520, stack(0x0000000002bd0000,0x0000000002cd0000)]
+
+Stack: [0x0000000002bd0000,0x0000000002cd0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000002d32800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=25520, stack(0x0000000002bd0000,0x0000000002cd0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000fc000000, size: 64 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 18944K, used 327K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 2% used [0x00000000feb00000,0x00000000feb51ec8,0x00000000ffb00000)
+  from space 2560K, 0% used [0x00000000ffd80000,0x00000000ffd80000,0x0000000100000000)
+  to   space 2560K, 0% used [0x00000000ffb00000,0x00000000ffb00000,0x00000000ffd80000)
+ ParOldGen       total 44032K, used 0K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 0% used [0x00000000fc000000,0x00000000fc000000,0x00000000feb00000)
+ Metaspace       used 781K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000121f0000,0x0000000012220000] byte_map_base: 0x0000000011a10000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000063873420
+ Begin Bits: [0x0000000012a20000, 0x0000000012b20000)
+ End Bits:   [0x0000000012b20000, 0x0000000012c20000)
+
+Polling page: 0x00000000013e0000
+
+CodeCache: size=245760Kb used=327Kb max_used=327Kb free=245432Kb
+ bounds [0x0000000002e30000, 0x00000000030a0000, 0x0000000011e30000]
+ total_blobs=56 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.046 loading class java/lang/Short
+Event: 0.046 loading class java/lang/Short done
+Event: 0.046 loading class java/lang/Integer
+Event: 0.046 loading class java/lang/Integer done
+Event: 0.046 loading class java/lang/Long
+Event: 0.047 loading class java/lang/Long done
+Event: 0.048 loading class java/lang/NullPointerException
+Event: 0.048 loading class java/lang/NullPointerException done
+Event: 0.048 loading class java/lang/ArithmeticException
+Event: 0.048 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff642840000 - 0x00007ff642875000 	C:\Program Files\OpenJDK\openjdk-8u292-b10\bin\java.exe
+0x00007ff8e1bb0000 - 0x00007ff8e1da5000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff8c3ec0000 - 0x00007ff8c3ed3000 	C:\Program Files\Avast Software\Avast\aswhook.dll
+0x00007ff8e0050000 - 0x00007ff8e010d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff8df570000 - 0x00007ff8df838000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff8dfcb0000 - 0x00007ff8dfd5c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff8e1890000 - 0x00007ff8e192e000 	C:\Windows\System32\msvcrt.dll
+0x00007ff8dfd60000 - 0x00007ff8dfdfb000 	C:\Windows\System32\sechost.dll
+0x00007ff8dfe50000 - 0x00007ff8dff7b000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff8e0ef0000 - 0x00007ff8e1090000 	C:\Windows\System32\USER32.dll
+0x00007ff8df3a0000 - 0x00007ff8df3c2000 	C:\Windows\System32\win32u.dll
+0x00007ff8e1ae0000 - 0x00007ff8e1b0a000 	C:\Windows\System32\GDI32.dll
+0x00007ff8df890000 - 0x00007ff8df99b000 	C:\Windows\System32\gdi32full.dll
+0x00007ff8df3d0000 - 0x00007ff8df46d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff8df470000 - 0x00007ff8df570000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff8c2f30000 - 0x00007ff8c31ca000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb\COMCTL32.dll
+0x00007ff8dfe20000 - 0x00007ff8dfe50000 	C:\Windows\System32\IMM32.DLL
+0x0000000063900000 - 0x00000000639d2000 	C:\Program Files\OpenJDK\openjdk-8u292-b10\jre\bin\msvcr100.dll
+0x0000000063060000 - 0x00000000638f5000 	C:\Program Files\OpenJDK\openjdk-8u292-b10\jre\bin\server\jvm.dll
+0x00007ff8dfc20000 - 0x00007ff8dfc28000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff8d3310000 - 0x00007ff8d3319000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff8d6bb0000 - 0x00007ff8d6bba000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff8cfb80000 - 0x00007ff8cfba7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff8e03e0000 - 0x00007ff8e044b000 	C:\Windows\System32\WS2_32.dll
+0x00007ff8da2a0000 - 0x00007ff8da2af000 	C:\Program Files\OpenJDK\openjdk-8u292-b10\jre\bin\verify.dll
+0x00007ff8d5580000 - 0x00007ff8d55a9000 	C:\Program Files\OpenJDK\openjdk-8u292-b10\jre\bin\java.dll
+0x00007ff8d45e0000 - 0x00007ff8d45f6000 	C:\Program Files\OpenJDK\openjdk-8u292-b10\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew 
+java_command: org.gradle.wrapper.GradleWrapperMain app:installDebug -PreactNativeDevServerPort=8081
+java_class_path (initial): D:\Bootcamp\React Native\AppleseedsApp\android\\gradle\wrapper\gradle-wrapper.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\OpenJDK\openjdk-8u292-b10
+CLASSPATH=D:\Bootcamp\React Native\AppleseedsApp\android\\gradle\wrapper\gradle-wrapper.jar
+PATH=D:\Bootcamp\React Native\AppleseedsApp\android\node_modules\.bin;D:\Bootcamp\React Native\AppleseedsApp\node_modules\.bin;D:\Bootcamp\React Native\node_modules\.bin;D:\Bootcamp\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs;D:\Bootcamp\React Native\AppleseedsApp\node_modules\.bin;D:\Bootcamp\React Native\node_modules\.bin;D:\Bootcamp\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-8u292-b10\bin;C:\Program Files\nodejs\;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\USER\AppData\Local\Android\Sdk\platform-tools;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Local\Android\Sdk\platform-tools;;D:\Bootcamp\React Native\AppleseedsApp\node_modules\.bin
+USERNAME=USER
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1023)
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 23 model 24 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 6245712k(293712k free), swap 25120080k(6040k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.292-b10) for windows-amd64 JRE (1.8.0_292-b10), built on Apr  9 2021 12:12:51 by "build" with MS VC++ 10.0 (VS2010)
+
+time: Sun Jul 25 09:30:07 2021
+timezone: Jerusalem Daylight Time
+elapsed time: 0.065949 seconds (0d 0h 0m 0s)
+
